@@ -8,7 +8,7 @@ function Title({
  }) {
   const variants = {
     hidden: { opacity: 0, y: 0 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
   }
   const controls = useAnimation()
   const [ref, inView] = useInView({
@@ -31,7 +31,7 @@ function Title({
       initial="hidden"
       animate={controls}
       variants={variants}
-    className={`bg-primary w-full h-36 mb-24 items-center flex justify-center `}>
+    className={`bg-primary w-full h-36 mb-24 lg:mb-0  items-center flex justify-center `}>
     <motion.div className={`flex flex-row relative hover:translate-x-14 hover:translate transition-all
     
        items-start my-4 justify-center`}>

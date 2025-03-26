@@ -4,49 +4,145 @@ import React from 'react'
 
 function Footer() {
   return (
-<footer className= "dark:bg-black bg-gray-100">
-  <div className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Column 1 - About */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-primary">خِدْمَات</h3>
+            <p className="mb-4  xl:text-left text-center">
+              نقدم حلولاً متكاملة لإدارة المخزون والمبيعات لتطوير أعمالك وتحقيق
+              النجاح المستدام.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-primary transition">
+                فيسبوك
+              </a>
+              <a href="#" className="hover:text-primary transition">
+                تويتر
+              </a>
+              <a href="#" className="hover:text-primary transition">
+                لينكدإن
+              </a>
+            </div>
+          </div>
 
+          {/* Column 2 - Quick Links */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-primary">روابط سريعة</h3>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="#الرئيسية"
+                  className="hover:text-primary transition"
+                >
+                  الرئيسية
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition">
+                  الخدمات
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition">
+                  الأسعار
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition">
+                  المميزات
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition">
+                  تواصل معنا
+                </a>
+              </li>
+            </ul>
+          </div>
 
-    <div className="lg:flex lg:items-end lg:justify-between">
-      <div>
-        <div className="flex justify-center  lg:justify-center">
-   
-          <Image src={'/Y.png'} alt='me' className='rounded-full' width={80} height={80}/>
+          {/* Column 3 - Services */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-primary">خدماتنا</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="hover:text-primary transition">
+                  إدارة المخزون
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary   transition">
+                  تقارير المبيعات
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition">
+                  مسح الباركود
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition">
+                  حلول متعددة الفروع
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition">
+                  التكامل مع أنظمة الدفع
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4 - Contact */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-primary">تواصل معنا</h3>
+            <ul className="space-y-2">
+              <li className="flex items-start">
+                <span className="mr-2">📍</span>
+                <span>الجزائر، الجزائر العاصمة، الجزائر</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">📞</span>
+
+                <span>+213 540849366</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">📞</span>
+
+                {/* <span>+213 0540849366</span> <br />  */}
+                <span>+213 541593067</span>
+              </li>
+
+              <li className="flex items-start">
+                <span className="mr-2">✉️</span>
+                {/* <span>info@khdam-app.com</span> */}
+                <span> zianitakieddineofficial@gmail.com</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">✉️</span>
+                <span> youcefldn26@gmail.com</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <p className="mx-auto mt-6 max-w-md  dark:text-white leading-relaxed text-gray-500 text-center">
-        🚀 Turning Ideas into Reality with Code & Design | Crafting seamless web and mobile experiences to bring innovation to life. © 2025 Laidani. All Rights Reserved. 🔥
-        </p>
+        {/* Copyright */}
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p>© 2025 خِدْمَات. جميع الحقوق محفوظة</p>
+          <div className="mt-2 text-sm text-gray-400">
+            <a href="#" className="hover:text-white transition">
+              شروط الخدمة
+            </a>{" "}
+            |
+            <a href="#" className="hover:text-white transition px-2">
+              سياسة الخصوصية
+            </a>
+          </div>
+        </div>
       </div>
-
-      <ul
-        className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12"
-      >
-        <li>
-          <a className="text-gray-700 transition dark:text-gray-300 dark:hover:text-gray-500 hover:text-gray-700/75" href="#about"> About </a>
-        </li>
-
-        <li>
-          <a className="text-gray-700  dark:text-gray-300  transition dark:hover:text-gray-500 hover:text-gray-700/75" href="#home"> Home </a>
-        </li>
-
-        <li>
-          <a className="text-gray-700 transition  dark:text-gray-300  dark:hover:text-gray-500 hover:text-gray-700/75" href="#project"> Projects </a>
-        </li>
-
-        <li>
-          <a className="text-gray-700 transition dark:text-gray-300 dark:hover:text-gray-500 hover:text-gray-700/75" href="#contact"> Contact </a>
-        </li>
-      </ul>
-    </div>
-
-    <p className="mt-12 text-center text-sm dark:text-white  text-gray-500 lg:text-right">
-      Copyright &copy; 2022. All rights reserved.
-    </p>
-  </div>
-</footer>
-  )
+    </footer>
+  );
 }
 
 export default Footer

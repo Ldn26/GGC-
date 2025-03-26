@@ -72,179 +72,151 @@ function Skils() {
   // }, [controls, inView])
 
   return (
+    <div
+      id="الميزات"
+      className="grid px-16 grid-cols-1 mb-10   mt-4 gap-12 lg:grid-cols-3 lg:gap-16"
+    >
+      <motion.article
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={variants}
+        className="rounded-lg  bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transtion-all hover:shadow-2xl sm:p-6"
+      >
+        {/* <div className="bg-white p-2 w-fit rounded-full text-white flex items-center justify-center"> */}
+        {/* <MdWeb size={40} color="black" /> */}
+        <Image src={"/assets/barcode.png"} width={60} alt="bill" height={60} />
 
+        {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
+        {/* </div> */}
 
-    <div className="grid px-16 grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
+        <h3 className="  text-[22.5px] font-bold   text-center text-gray-900">
+          مسح ضوئي فوري{" "}
+        </h3>
 
-<motion.article
-   ref={ref}
-   initial="hidden"
-   animate={controls}
-   variants={variants}
-   className="rounded-lg  bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transtion-all hover:shadow-2xl sm:p-6"
+        <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
+          مسح باركود المنتجات بسرعة ودقة{" "}
+        </p>
+      </motion.article>
 
->
+      <motion.article
+        ref={ref2}
+        initial="hidden"
+        animate={controls}
+        variants={variants3}
+        className="rounded-lg  bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transtion-all hover:shadow-2xl sm:p-6"
+      >
+        {/* <div className="bg-white p-2 w-fit text-white rounded-full flex items-center justify-center"> */}
+        <Image src={"/assets/update.png"} width={60} alt="bill" height={60} />
+        {/* <FaCode size={40} color="black" /> */}
+        {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
+        {/* </div> */}
 
-<div className='bg-white p-2 w-fit rounded-full text-white flex items-center justify-center'>
+        <h3 className="  text-[22.5px] font-bold  text-center  text-gray-900">
+          تحديث لحظي{" "}
+        </h3>
 
-<MdWeb size={40} color='black'  />
+        <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
+          متابعة المخزون بين جميع فروعك في الوقت الفعلي
+        </p>
+      </motion.article>
 
+      <motion.article
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={variants2}
+        className="rounded-lg  bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
+      >
+        {/* <div className="bg-white p-2 w-fit text-white flex rounded-full  items-center justify-center"> */}
+        {/* <ImMobile size={40} color="black" /> */}
+        <Image src={"/assets/stats.png"} width={60} alt="bill" height={60} />
 
-{/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
-</div>
+        {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
+        {/* </div> */}
 
-    <h3 className="  text-[22.5px] font-bold   text-center text-gray-900">
-    Front-End Development
-    </h3>
+        <h3 className="  text-[22.5px] font-bold  text-center text-gray-900">
+          تقارير ذكية
+        </h3>
 
+        <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
+          تحليلات مبيعات مفصلة تساعدك في اتخاذ القرارات
+        </p>
+      </motion.article>
 
-  <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
-  Crafting responsive and dynamic user interfaces using React, Next.js, and Tailwind CSS.
-  </p>
+      <motion.article
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={variants}
+        className="rounded-lg   bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
+      >
+        {/* <div className="bg-white p-2 w-fit rounded-full  text-white flex items-center justify-center"> */}
+        {/* <FaDev size={40} color="black" /> */}
+        <Image src={"/assets/login.png"} width={60} alt="bill" height={60} />
 
+        {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
+        {/* </div> */}
 
-</motion.article>
+        <h3 className="  text-[22.5px] font-bold  text-center text-gray-900">
+          واجهة بسيطة
+        </h3>
 
+        <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
+          تصميم بديهي لا يحتاج إلى تدريب مسبق
+        </p>
+      </motion.article>
 
+      <motion.article
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={variants4}
+        className="rounded-lg    bg-secendery  p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
+      >
+        {/* <div className="bg-white p-2 w-fit text-white flex rounded-full items-center justify-center"> */}
+        <Image
+          src={"/assets/support.png"}
+          width={60}
+          alt="support"
+          height={60}
+        />
 
-<motion.article
-   ref={ref2}
-   initial="hidden"
-   animate={controls}
-   variants={variants3}
+        {/* </div> */}
 
-  className="rounded-lg  bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transtion-all hover:shadow-2xl sm:p-6"
->
+        <h3 className="  text-[22.5px] font-bold   text-center  text-gray-900">
+          دعم متكامل
+        </h3>
 
-<div className='bg-white p-2 w-fit text-white rounded-full flex items-center justify-center'>
-<FaCode size={40} color='black'  />
-{/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
-</div>
+        <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
+          فريق دعم فني متاح على مدار الساعة
+        </p>
+      </motion.article>
 
-    <h3 className="  text-[22.5px] font-bold  text-center  text-gray-900">
-    Back-End Development
-    </h3>
+      <motion.article
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={variants2}
+        className="rounded-lg bg-secendery   p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
+      >
+        <div className="bg-white p-2 w-fit rounded-full text-white flex items-center justify-center">
+          {/* <BsDatabaseCheck size={40} color="black" /> */}
+          <Image src={"/assets/bill.png"} width={40} alt="bill" height={40} />
 
+          {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
+        </div>
 
-  <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
-  Building secure and scalable server-side applications with Node.js, Express, and MongoDB.
-  </p>
+        <h3 className="  text-[22.5px] font-bold  text-center text-gray-900">
+          نظام الفواتير الذكية
+        </h3>
 
-
-</motion.article>
-
-
-<motion.article
-   ref={ref}
-   initial="hidden"
-   animate={controls}
-   variants={variants2}
-  className="rounded-lg  bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
->
-
-<div className='bg-white p-2 w-fit text-white flex rounded-full  items-center justify-center'>
-<ImMobile size={40} color='black'  />
-{/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
-</div>
-
-    <h3 className="  text-[22.5px] font-bold  text-center text-gray-900">
-    Mobile App Development 
-    </h3>
-
-
-  <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
-  Developing cross-platform mobile apps using React Native and Expo.
-  </p>
-
-
-</motion.article>
-
-
-
-<motion.article
-   ref={ref}
-   initial="hidden"
-   animate={controls}
-   variants={variants}
-  className="rounded-lg   bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
->
-
-<div className='bg-white p-2 w-fit rounded-full  text-white flex items-center justify-center'>
-<FaDev size={40} color='black'  /> 
-
-{/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
-</div>
-
-    <h3 className="  text-[22.5px] font-bold  text-center text-gray-900">
-    DevOps & Deployment 
-    </h3>
-
-
-  <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
-  Deploying and maintaining applications with Vercel, Docker, and CI/CD pipelines.
-  </p>
-
-
-</motion.article>
-
-
-<motion.article
-   ref={ref}
-   initial="hidden"
-   animate={controls}
-   variants={variants4}
-  className="rounded-lg    bg-secendery  p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
->
-
-<div className='bg-white p-2 w-fit text-white flex rounded-full items-center justify-center'>
-
-<Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} />
-</div>
-
-    <h3 className="  text-[22.5px] font-bold   text-center  text-gray-900">
-    State Management
-    </h3>
-
-    
-  <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
-  Handling complex application states with Zustand, Redux, and React Context API.
-  </p>
-
-
-</motion.article>
-
-<motion.article
-ref={ref}
-initial="hidden"
-animate={controls}
-variants={variants2}
-  className="rounded-lg bg-secendery   p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
->
-
-<div className='bg-white p-2 w-fit rounded-full text-white flex items-center justify-center'>
-<BsDatabaseCheck size={40} color='black' />
-
-{/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
-</div>
-
-    <h3 className="  text-[22.5px] font-bold  text-center text-gray-900">
-    Database Management 
-    </h3>
-
-
-  <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
-  Managing relational (PostgreSQL, MySQL) and NoSQL (MongoDB) databases for efficient data storage
-  </p>  
-
-
-</motion.article>
-
-
-
-
-  </div>
-
-  )
+        <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
+          حساب تلقائي لتكلفة المنتج وسعر البيع مع هامش الربح
+        </p>
+      </motion.article>
+    </div>
+  );
 }
 
 export default Skils

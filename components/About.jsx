@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useEffect } from 'react'
 import {motion ,useAnimation} from "framer-motion"
 import {useInView} from 'react-intersection-observer'
-
+import CountUp from '../y/CountUp/CountUp'
 function About() {
 
 
@@ -33,69 +33,83 @@ function About() {
   }, [controls, inView])
   return (
     <div
-    id='about'
-    className="flex flex-col mt-10 dark:bg-black bg-[#E8EAED] -z-20 lg:flex-row  items-center  lg:items-stretch  h-[calc(100vh-88px)] justify-center"
-  >
-     <motion.div  
-     variants = {variants}
-     ref={ref}
-     initial="hidden"
-     animate={controls}
-     className='     relative hidden lg:flex items-center justify-center w-1/2 '>
-  <Image width={650} height={650}  className=' z-30 rounded-full' alt='me' src={"/Y.png"}/>
-  </motion.div>
-  
-  <motion.div
-       variants = {variants2}
-       ref={ref}
-       initial="hidden"
-       animate={controls}
-  className='flex items-center w-full lg:w-1/2 p-24 justify-center'>
-  
-      <div className="   justify-center flex-col   items-center      ltr:sm:text-left rtl:sm:text-right"> 
-        <h1 className="text-[60px]   font-bold text-center  sm:text-6xl">
-   About Me 
-        </h1>
-  
-        <p className="mt-4 max-w-lg sm:text-2xl/relaxed text-center" >
-        I’m Youcef Laidani, a Full Stack Developer from Algeria. I build web and mobile apps with React, Next.js, Node.js, and MongoDB, focusing on performance and user experience. 🚀
-        </p>
-  
-     <div className='hidden lg:flex flex-col gap-2 my-4'>
-      <h1  className='text-3xl font-bold '>Back-end-Dev</h1>
-<div className='relative w-full rounded-full  h-3 bg-white'>
-  <div className='border-primary border-2 absolute left-[395px] -top-[2px] bg-white rounded-full z-20 w-4 h-4 '></div>
-  <div className='absolute bg-primary rounded-l-full  h-3 w-[400px]'></div>
-</div>
-     </div>
+      id="من نحن"
+      className="flex flex-col-reverse     mt-10  lg:mt-0  px-8    lg:flex-row  items-center  lg:items-stretch  justify-around"
+    >
+      <motion.div
+        variants={variants}
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        className="  p-4 relative  w-full lg:flex items-center justify-center  "
+      >
+        <Image
+          width={650}
+          height={650}
+          // className=" z-30 "
+          className=" !w-[650px] !h-[650px]"
+          alt="Inventory illustration"
+          src={"assets/invertory.svg"}
+        />
+      </motion.div>
 
-     <div className=' hidden lg:flex flex-col gap-2 my-4'>
-      <h1  className='text-3xl font-bold '>Front-end Dev</h1>
-<div className='relative w-full rounded-full  h-3 bg-white'>
-  <div className='border-primary border-2 absolute left-[445px] -top-[2px] bg-white rounded-full z-20 w-4 h-4 '></div>
-  <div className='absolute bg-primary rounded-l-full  h-3 w-[450px]'></div>
-</div>
-     </div>
-     <div className='hidden lg:flex flex-col gap-2 my-4'>
-      <h1  className='text-3xl font-bold '>Mobile Dev</h1>
-<div className='relative w-full rounded-full  h-3 bg-white'>
-  <div className='border-primary border-2 absolute left-[395px] -top-[2px] bg-white rounded-full z-20 w-4 h-4 '></div>
-  <div className='absolute bg-primary rounded-l-full  h-3 w-[400px]'></div>
-</div>
-     </div>
-     <div className='hidden lg:flex flex-col gap-2 my-4'>
-      <h1  className='text-3xl font-bold '>Database management </h1>
-<div className='relative w-full rounded-full  h-3 bg-white'>
-  <div className='border-primary border-2 absolute left-[395px] -top-[2px] bg-white rounded-full z-20 w-4 h-4 '></div>
-  <div className='absolute bg-primary rounded-l-full  h-3 w-[400px]'></div>
-</div>
-     </div>
-      </div>
-        
-  </motion.div>
-   
+      <motion.div
+        variants={variants2}
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        className="flex items-center w-full  justify-center"
+      >
+        <div className="   justify-center flex-col   items-center      ltr:sm:text-left rtl:sm:text-right">
+          <div className="items-center flex justify-center">
+            <Image
+              width={150}
+              height={150}
+              className=" z-30 rounded-full"
+              alt="me"
+              src={"/assets/logo.svg"}
+            />
+          </div>
+
+          <p className="mt-4 max-w-lg text-2xl/relaxed text-center">
+            نحن فريق متخصص في تقديم حلول تقنية متكاملة لإدارة الأعمال. نقدم
+            تطبيقًا مبتكرًا يساعدك في تحويل عمليات إدارة المخزون من مهمة معقدة
+            إلى عملية بسيطة وفعال
+          </p>
+          {/* 
+          <div className="hidden lg:flex flex-col gap-2 my-4">
+            <h1 className="text-3xl font-bold ">Back-end-Dev</h1>
+            <div className="relative w-full rounded-full  h-3 bg-white">
+              <div className="border-primary border-2 absolute left-[395px] -top-[2px] bg-white rounded-full z-20 w-4 h-4 "></div>
+              <div className="absolute bg-primary rounded-l-full  h-3 w-[400px]"></div>
+            </div>
+          </div>
+
+          <div className=" hidden lg:flex flex-col gap-2 my-4">
+            <h1 className="text-3xl font-bold ">Front-end Dev</h1>
+            <div className="relative w-full rounded-full  h-3 bg-white">
+              <div className="border-primary border-2 absolute left-[445px] -top-[2px] bg-white rounded-full z-20 w-4 h-4 "></div>
+              <div className="absolute bg-primary rounded-l-full  h-3 w-[450px]"></div>
+            </div>
+          </div>
+          <div className="hidden lg:flex flex-col gap-2 my-4">
+            <h1 className="text-3xl font-bold ">Mobile Dev</h1>
+            <div className="relative w-full rounded-full  h-3 bg-white">
+              <div className="border-primary border-2 absolute left-[395px] -top-[2px] bg-white rounded-full z-20 w-4 h-4 "></div>
+              <div className="absolute bg-primary rounded-l-full  h-3 w-[400px]"></div>
+            </div>
+          </div>
+          <div className="hidden lg:flex flex-col gap-2 my-4">
+            <h1 className="text-3xl font-bold ">Database management </h1>
+            <div className="relative w-full rounded-full  h-3 bg-white">
+              <div className="border-primary border-2 absolute left-[395px] -top-[2px] bg-white rounded-full z-20 w-4 h-4 "></div>
+              <div className="absolute bg-primary rounded-l-full  h-3 w-[400px]"></div>
+            </div>
+          </div> */}
+        </div>
+      </motion.div>
     </div>
-  )
+  );
 }
 
 export default About

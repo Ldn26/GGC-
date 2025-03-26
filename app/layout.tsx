@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
   
 export const metadata: Metadata = {
-  title: "YL Portfolio",
-  description: "Welcome to my Portfolio",
+  title: "خدام  | khedam ",
+  description: "Welcome to khedam",
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable}  w-full  antialiased`}
       >
         <ThemeProvider        
             attribute="class"

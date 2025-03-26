@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
   html {
     scroll-behavior: smooth;
   }
 
   :root {
-    --primary: 17 100% 42%; /* Converted #1164D9 to HSL */
+    /* --primary: 17 100% 42%; Converted #1164D9 to HSL */
+  --primary   :  179.5 62.7% 38.8%;
     --secondary: 220 9% 92%; /* Converted #E8EAED to HSL */
   }
 
@@ -83,6 +83,65 @@
 
 
 
+.banner {
+background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+}
+
+
+
+
+
+.onde {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+
+
+/* Animation */
+
+.parallaxonde > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallaxonde > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallaxonde > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallaxonde > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallaxonde > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .onde {
+    height:40px;
+    min-height:40px;
+  }
+}
 
 
 
@@ -90,4 +149,39 @@
 
 
 
+.mobileanim {
+  animation: floatUpDown 2s ease-in-out infinite;
+}
 
+
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes flip {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+}
+
+
+
+
+
+
+
+.floating-flip-element {
+
+  /* animation: flip 4s ease-in-out infinite;
+  transform-style: preserve-3d; */
+}
+ 

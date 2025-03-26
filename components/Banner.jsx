@@ -1,13 +1,18 @@
 "use client"
 import Image from 'next/image'
-import React, { useRef } from 'react'
-import { useEffect  } from 'react'
-import {motion ,AnimatePresence ,useAnimation} from "framer-motion"
+import React, {  } from 'react'
+import { useEffect, useState } from "react";
+import {  useAnimation} from "framer-motion"
 import { useInView } from 'react-intersection-observer'
+import Link from "next/link";
+import { IoClose } from "react-icons/io5";
+// import { ModeToggle } from "./ui/ModeToggle";
+import Wave from "react-wavify";
+import BlurText from '../y/BlurText/BlurText'
+import { IoMdMenu } from "react-icons/io";
 function Banner() {
-
-
-  const text = 'Youcef Laidani'
+  const [isOpen, setIsOpen] = useState(false);
+  const text = '  خدام  تطبيق'
   const variants = {
     hidden: { opacity: 1, x: 100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
@@ -17,8 +22,6 @@ function Banner() {
     threshold: 0, 
   })
 
-  const isInView = useInView(ref, { once: true });
-  const ref2 = useRef(null)
   useEffect(() => {
     if (inView) {
       controls.start('visible')
@@ -27,83 +30,183 @@ function Banner() {
   }, [controls, inView])
 
   return (
-    <div
-  className="flex flex-col bg-[#E8EAED] dark:bg-black -z-20 lg:flex-row  items-center  lg:items-stretch  h-[calc(100vh-88px)] justify-center"
->
-
-<div className='flex  p-24 md:p-0 items-center w-full lg:w-1/2 justify-center'>
-
-    <div className="   justify-center flex-col   items-center      ltr:sm:text-left rtl:sm:text-right"> 
-    <p className='text-[38px] text-primary'>Hello, I’m</p>
-      <div className="text-[60px] flex flex-row   font-bold  sm:text-6xl">
-        <AnimatePresence>
-        {text.split('').map((char, i) =>
-                <motion.p
-                ref={ref2}
-                key={i}
-                initial={{ opacity: 0, x: -18 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                exit="hidden"
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="text-xl text-center sm:text-4xl font-bold tracking-tighter md:text-6xl md:leading-[4rem]"
+    <div id="الرئيسية" className=" banner   w-full">
+      {/* Header */}
+      <div className="z-50   h-[88px]         ">
+        <div className="container mx-auto py-5 flex items-center justify-between px-9 md:py-5">
+          <div className="hidden lg:flex lg:items-center">
+            <Link
+              href="#اتصل بنا"
+              className="block whitespace-nowrap    w-full rounded-lg bg-primary px-12 py-3 text-2xl font-medium text-white shadow hover:bg-white hover:border-primary border hover:scale-105 hover:text-primary transition-all focus:outline-none  sm:w-auto"
+            >
+              تواصل معنا الان
+            </Link>
+            {/* <div className="ml-2">
+              <ModeToggle />
+            </div> */}
+          </div>
+          {/* Desktop Navigation */}
+          <ul className="md:items-center lg:flex hidden">
+            {[
+              "الرئيسية",
+              "من نحن",
+              "الميزات",
+              // "الفريق",
+              "التسعير",
+              "اتصل بنا",
+            ].map((menuItem, index) => (
+              <li
+                key={index}
+                className="mx-4 whitespace-nowrap font-medium hover:border-b-2 border-primary flex-none"
               >
-                {char === ' ' ? <span>&nbsp;</span> : char}
-              </motion.p>
-     
-        ) 
-        }
-                </AnimatePresence>
+                <Link
+                  href={`#${menuItem.toLowerCase()}`}
+                  className="relative text-xl transition duration-300 w-fit block text-mainColor tracking-wide hover:text-orangeColor"
+                >
+                  {menuItem}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          {/* Desktop Buttons  */}
 
- {/* {text} */}
-      </div>
+          {/* logo  */}
+          <Image
+            width={100}
+            height={20}
+            className="  p-2 z-30 rounded-full"
+            alt="logo"
+            src={"/assets/logo.svg"}
+          />
 
-      <p className="mt-4 max-w-lg sm:text-2xl/relaxed text-center lg:text-left">
-      I’m a Full Stack Developer based in Algeria! I love designing, coding, and building innovative digital experiences.
-      </p>
+          {/* Mobile Hamburger Icon */}
+          <div className="lg:hidden  top-6">
+            <div
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-3xl transition-all text-white"
+            >
+              {!isOpen ? (
+                <IoMdMenu size={40} color="white" />
+              ) : (
+                <IoClose size={40} color="white" />
+              )}
+            </div>
+            <div></div>
+          </div>
+        </div>
 
-      <div className="mt-8 flex flex-wrap gap-4 text-center">
-        <a
-          href="#"
-          className="block w-full rounded  bg-primary px-12 py-3 text-xl font-medium text-white hover:scale-105 hover:border-primary hover:border  shadow hover:bg-secendery hover:text-primary transition-all focus:outline-none  sm:w-auto"
+        {/* Mobile Navigation Menu */}
+        <ul
+          className={`fixed  bg-primary border-primary border  top-[70px] z-50 gap-3 lg:hidden ${
+            isOpen ? "left-[35px] duration-500" : "-left-[1500px] duration-500"
+          } w-3/5 flex justify-center flex-col   h-[400px] rounded-3xl   gap-1 items-center px-3 p-4`}
         >
-          Get in touch
-        </a>
-        <a
-          href="#"
-          className="block w-full rounded text-primary px-12 py-3 text-xl font-medium border border-primary  hover:scale-105 shadow hover:bg-primary hover:text-white  transition-all  sm:w-auto"
-        >
-          Download CV
-        </a>
+          <Image
+            src={"/assets/logo.svg"}
+            alt="me"
+            className="rounded-full"
+            width={80}
+            height={80}
+          />
+          {[
+            "الرئيسية",
+            "من نحن",
+            "الميزات",
+            // "الفريق",
+            "التسعير",
+            "اتصل بنا",
+          ].map((menuItem, index) => (
+            <li
+              key={index}
+              className="hover:border-l-4   border-b  rounded-lg hover:scale-105 transition-all  border-white  hover:border-primary  mb-2 hover:border-r-primary hover:border-r-4 w-2/4 justify-center flex gap-2 items-center"
+            >
+{/* if we press to the link i want to close the ul  */}
+   
+
+              <Link
+                onClick={() => setIsOpen(!isOpen)}
+                href={`/#${menuItem}`}
+                className="transition  text-center text-xl   dark:text-white  font-medium tracking-wide duration-300 hover:text-primary "
+              >
+                {menuItem}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
+      {/* Banner */}
+      <div
+        className="flex flex-col-reverse m
+       p-4  mt-40 lg:mt-0  lg:h-[calc(100vh-200px)]       lg:flex-row  items-center  lg:items-stretch   justify-center"
+      >
+        {/* Text  */}
+        <div className="flex   order-1 lg:order-2   md:p-4 items-center w-full  justify-center">
+          <div className="   justify-center flex-col   items-center      ltr:sm:text-left rtl:sm:text-right">
+            <div className="flex items-center flex-col-reverse md:flex-row  justify-end">
+              <BlurText
+                text={text}
+                delay={50}
+                // style={{ fontSize: 40 }}
+                animateBy="words"
+                // animateBy="letters"
+
+                direction="bottom"
+                // onAnimationComplete={handleAnimationComplete}
+                className="lg:text-[50px] text-[40px]   font-bold  text-right "
+              />
+
+              <p className="text-[28px] md:text-[40px]   ml-4 ltr text-right text-primary">
+                مرحبا بكم في{" "}
+              </p>
+            </div>
+
+            <p className="mt-4 max-w-xl sm:text-2xl/relaxed text-center lg:text-right">
+              مع تطبيقنا، يمكنك مسح المنتجات ضوئيًا، تحديث المخزون فورًا، وتنظيم
+              عملياتك بكل كفاءة. واجهة بسيطة وأدوات قوية لتبسيط إدارة المخزون
+              وتحقيق الإنتاجية المثلى.
+            </p>
+
+            <div className="mt-8 flex flex-col  lg:flex-row  items-center justify-end     gap-4 ">
+              <a
+                href="#اتصل بنا"
+                className="block w-full rounded  whitespace-nowrap   text-center bg-primary px-12 py-3 text-xl font-medium text-white hover:scale-105 hover:border-primary hover:border  shadow hover:bg-secendery hover:text-primary transition-all focus:outline-none  sm:w-auto"
+              >
+                تواصل معنا الان{" "}
+              </a>
+              <a
+                href="#التسعير"
+                className="block w-full rounded text-center text-primary px-12 py-3 text-xl font-medium border border-primary  hover:scale-105 shadow hover:bg-primary hover:text-white  transition-all  sm:w-auto"
+              >
+                التسعير
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Image */}
+        <div className=" mobileanim animate-[floatAndRotate_6s_ease-in-out_infinite]  order-2 lg:order-1 flex items-center justify-center w-full   ">
+          <Image
+            width={450}
+            height={450}
+            className="   floating-flip-element    "
+            alt="me"
+            src={"/assets/mobile.svg"}
+          />
+        </div>
+      </div>
+      <Wave
+        fill="#25a1a0"
+        paused={false}
+        style={{ display: "flex" }}
+        options={{
+          height: 20,
+          amplitude: 40,
+          speed: 0.3,
+          points: 8,
+        }}
+      />
     </div>
-      
-</div>
-    <motion.div 
-        ref={ref}
-        initial="hidden"
-        // animate={controls}
-        variants={variants}
-        animate={{
-          y: [0, -40, 0], // Keyframes for the floating animation
-        }}
-        transition={{
-          duration: 3,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-
-
-
-    className='   relative hidden lg:flex items-center justify-center w-1/2 '>
-
-<Image width={650} height={650}  className=' border-4 border-primary z-30 rounded-full' alt='me' src={"/ana2.png"}/>
-</motion.div>
-
-  </div>
-
-
-
-  )
+  );
 }
 
 export default Banner
