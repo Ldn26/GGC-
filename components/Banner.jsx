@@ -36,10 +36,13 @@ function Banner() {
         <div className="container mx-auto py-5 flex items-center justify-between px-9 md:py-5">
           <div className="hidden lg:flex lg:items-center">
             <Link
-              href="#اتصل بنا"
+              href="https://khdame.com/download"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block whitespace-nowrap    w-full rounded-lg bg-primary px-12 py-3 text-2xl font-medium text-white shadow hover:bg-white hover:border-primary border hover:scale-105 hover:text-primary transition-all focus:outline-none  sm:w-auto"
             >
-              تواصل معنا الان
+              {/* تواصل معنا الان        */}
+              حمل التطبيق الان
             </Link>
             {/* <div className="ml-2">
               <ModeToggle />
@@ -120,8 +123,7 @@ function Banner() {
               key={index}
               className="hover:border-l-4   border-b  rounded-lg hover:scale-105 transition-all  border-white  hover:border-primary  mb-2 hover:border-r-primary hover:border-r-4 w-2/4 justify-center flex gap-2 items-center"
             >
-{/* if we press to the link i want to close the ul  */}
-   
+              {/* if we press to the link i want to close the ul  */}
 
               <Link
                 onClick={() => setIsOpen(!isOpen)}
@@ -168,16 +170,18 @@ function Banner() {
 
             <div className="mt-8 flex flex-col  lg:flex-row  items-center justify-end     gap-4 ">
               <a
-                href="#اتصل بنا"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://khdame.com/download"
                 className="block w-full rounded  whitespace-nowrap   text-center bg-primary px-12 py-3 text-xl font-medium text-white hover:scale-105 hover:border-primary hover:border  shadow hover:bg-secendery hover:text-primary transition-all focus:outline-none  sm:w-auto"
               >
-                تواصل معنا الان{" "}
+                حمل التطبيق الان
               </a>
               <a
-                href="#التسعير"
+                href="#اتصل بنا"
                 className="block w-full rounded text-center text-primary px-12 py-3 text-xl font-medium border border-primary  hover:scale-105 shadow hover:bg-primary hover:text-white  transition-all  sm:w-auto"
               >
-                التسعير
+                تواصل معنا
               </a>
             </div>
           </div>

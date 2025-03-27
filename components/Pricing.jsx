@@ -7,32 +7,25 @@ function Pricing() {
 
     {
       title: "الخطة الأساسية",
-      price: 1000,
-      desc: "الخطة الأساسية تتضمن مساحة تخزين 1 جيجا ودعم فني وتحديثات مجانية  ",
-      features: [
-        "مساحة تخزين 1 جيجا",
-        "دعم فني",
-      ],
-      otherFeatures: [
-        "مساحة تخزين 1 جيجا",
-        "دعم فني",
-        "تحديثات مجانية",
-        "تصميم مجاني",
-      ],
+      price: 2000,
+      popular: true,
+      desc: "الخطة الأساسية تشمل اشتراك سنوي كامل مع دعم فني وتحديثات مجانية لمدة عام",
+      features: ["مساحة تخزين  ", "دعم تقني"],
+      otherFeatures: ["دعم تقني", "تحديثات مجانية", "مساحة تخزين "],
 
       buttonText: "تواصل معنا الآن",
     },
     {
       title: "الخطة المتقدمة",
       price: 50000,
-      desc: "الخطة المتقدمة تتضمن مساحة تخزين 5 جيجا ودعم فني وتحديثات مجانية وتصميم مجاني",
-      features: [
-        "دعم فني",
-        "تحديثات مجانية",
-      ],
+      popular: false,
+
+      // desc: "الخطة المتقدمة تتضمن مساحة تخزين 5 جيجا ودعم فني وتحديثات مجانية وتصميم مجاني",
+      desc: "الخطة المتقدمة تشمل بناء تطبيق جوال مخصص حسب احتياجات عملك، دعم فني كامل، تحديثات مجانية وتصميم خاص مجاني",
+      features: ["دعم فني", "تحديثات مجانية"],
       otherFeatures: [
-        "مساحة تخزين 1 جيجا",
-        "دعم فني",
+        // "مساحة تخزين 1 جيجا",
+        "دعم تقني",
         "تحديثات مجانية",
         "تصميم مجاني",
       ],
@@ -42,13 +35,20 @@ function Pricing() {
   return (
     <div
     id="التسعير"
-     className=" w-full   flex  flex-col   banner gap-12     lg:flex-row   justify-center  px-6  my-8">
+     className=" w-full   flex  flex-col   banner gap-12     lg:flex-row   justify-center  px-2   my-16">
       {PricePlan.map((plan, index) => {
         return (
           <div
-            key={index}
-            className=" flex-col items-center  w-full   lg:w-1/3 justify-center h-[600px] rounded-2xl border border-primary   p-4"
+            // key={index}
+            className=" flex-col items-center  w-full  relative  hover:scale-105 transition-all  lg:w-1/3 justify-center h-[500px] rounded-3xl border border-primary p-4  "
           >
+            {plan.popular && (
+              <div className="absolute top-0 font-bold left-0 bg-primary text-white p-2 rounded-br-3xl rounded-tl-3xl">
+                الأكثر شعبية
+              </div>
+            )}
+
+            
             <h1 className="text-center text-3xl  font-bold ">{plan.title}</h1>
             <p className="text-center my-4">{plan.desc}</p>
             <ul className="text-center flex  justify-around">
@@ -78,12 +78,14 @@ function Pricing() {
               );
             })}
             <div className="flex flex-col  justify-center items-center">
-
-            <div className="flex flex-col  w-1/2  rounded-xl   bg-primary hover:bg-white hover:text-primary transition-all mt-12  justify-center items-center">
-              <div className="  hover:text-primary    font-bold    py-2 ">
-                {plan.buttonText}
-              </div>
-            </div>
+              <a
+                href="#اتصل بنا"
+                className="flex flex-col  w-1/2  rounded-xl   bg-primary hover:bg-white hover:text-primary transition-all mt-12  justify-center items-center"
+              >
+                <div className="  hover:text-primary    font-bold    py-2 ">
+                  {plan.buttonText}
+                </div>
+              </a>
             </div>
           </div>
         );

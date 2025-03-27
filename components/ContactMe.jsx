@@ -104,16 +104,21 @@ function ContactMe() {
         </div>
 
         {/* the text  section */}
-        <div className="flex items-center   w-full  xlb:nw-1/2 flex-col justify-center p-32 ">
-          <h1 dir="rtl" className="font-bold       text-center text-4xl">
-            نحن هنا لمساعدتك ! <br />
-            يمكنك التواصل معنا عبر :
+        <div className="flex items-center   w-full  xlb:nw-1/2 flex-col justify-center  ">
+          <h1
+            dir="rtl"
+            className="font-bold   text-2xl  tracking-wide   leading-relaxed  text-center lg:text-4xl"
+          >
+            تواصل معنا لإنشاء حسابك <br />
+            وابدأ في استخدام التطبيق
           </h1>
           <div className="max-w-[750px]  flex-col items-center gap-15   flex  mt-8  max-h-[650px]">
             {/* phone */}
+            <div className="w-full h-[1px] my-3 bg-primary " />
+
             <div className="">
               {/* Phone */}
-              <div className="flex flex-row gap-5  items-center justify-end ">
+              <div className="flex flex-row  gap-5  items-center justify-end ">
                 <Image
                   src={"/assets/phone.png"}
                   width={60}
@@ -129,6 +134,8 @@ function ContactMe() {
                 0540849366
               </h1>
             </div>
+            <div className="w-full h-[1px] my-3 bg-primary " />
+
             {/* mail  */}
             <div>
               <div className="flex flex-row gap-5 mt-6 items-center justify-end ">
@@ -149,6 +156,8 @@ function ContactMe() {
                 yousseflaidani6@gmail.com
               </h1>
             </div>
+            <div className="w-full h-[1px] my-3 bg-primary " />
+
             {/* <div className="mt-4 flex-row justify-between  "></div> */}
           </div>
         </div>
