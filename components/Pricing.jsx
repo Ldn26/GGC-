@@ -39,7 +39,9 @@ function Pricing() {
       {PricePlan.map((plan, index) => {
         return (
           <div
-            // key={index}
+                      key={`plan-${index}`}
+
+            // key={Date.now() + index}
             className=" flex-col items-center  w-full  relative  hover:scale-105 transition-all  lg:w-1/3 justify-center h-[500px] rounded-3xl border border-primary p-4  "
           >
             {plan.popular && (
@@ -55,7 +57,7 @@ function Pricing() {
               {plan.features.map((feature, index) => {
                 return (
                   <li
-                    key={index}
+                    key={`feature-${index}`}
                     className="border border-primary  whitespace-nowrap  rounded-2xl px-4 p-2 hover:bg-primary text-white transition-all"
                   >
                     {feature}
@@ -69,7 +71,10 @@ function Pricing() {
             </h2>
             {plan.otherFeatures.map((feature, index) => {
               return (
-                <div className="flex flex-col  justify-center items-center">
+                <div
+                  key={`other-feature-${index}`}
+                  className="flex flex-col  justify-center items-center"
+                >
                   <div className="flex flex-row mt-4 gap-4 items-center   lg:w-96 w-72 p-1    borde bg-gray-800  rounded-xl  border-white   justify-between">
                     <FaCheck size={20} color="green" />
                     <h1 className="mr-4"> {feature}</h1>
