@@ -2,7 +2,6 @@ import Title from '../components/Title'
 import Banner from '../components/Banner'
 import Skils from '../components/Skiles'
 import About from '../components/About'
-
 import ContactMe from '../components/ContactMe'
 import Footer from '../components/Footer'
 import Pricing from '../components/Pricing'
@@ -14,8 +13,7 @@ export default function Home() {
       <About />
       <Title titel={"مميزات التطبيق"} />
       <Skils />
-      <Title titel={" خطط الأسعار"} />
-
+      <Title titel={" السعر "} />
       <Pricing />
       <Title titel={"تواصل معنا "} />
       <ContactMe />
