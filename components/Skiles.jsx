@@ -4,13 +4,13 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import { motion ,useAnimation} from "framer-motion"
 import { useInView } from 'react-intersection-observer'
-import { MdWeb } from "react-icons/md";
-import { BsDatabaseCheck } from "react-icons/bs";
-import { ImMobile } from "react-icons/im";
-import { FaDev } from "react-icons/fa";
-import { FaCode } from "react-icons/fa";
 
-
+import barcode from "../public/assets/barcode.png";
+import update from "../public/assets/update.png";
+import stats from "../public/assets/stats.png";
+import login from "../public/assets/login.png";
+import support from "../public/assets/support.png";
+import bill from "../public/assets/bill.png";
 function Skils() {
 
   const variants = {
@@ -85,7 +85,7 @@ function Skils() {
       >
         {/* <div className="bg-white p-2 w-fit rounded-full text-white flex items-center justify-center"> */}
         {/* <MdWeb size={40} color="black" /> */}
-        <Image src={"/assets/barcode.png"} width={60} alt="bill" height={60} />
+        <Image src={barcode} width={60} alt="bill" height={60} />
 
         {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
         {/* </div> */}
@@ -107,7 +107,7 @@ function Skils() {
         className="rounded-lg  bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transtion-all hover:shadow-2xl sm:p-6"
       >
         {/* <div className="bg-white p-2 w-fit text-white rounded-full flex items-center justify-center"> */}
-        <Image src={"/assets/update.png"} width={60} alt="bill" height={60} />
+        <Image src={update} width={60} alt="bill" height={60} />
         {/* <FaCode size={40} color="black" /> */}
         {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
         {/* </div> */}
@@ -128,12 +128,10 @@ function Skils() {
         variants={variants2}
         className="rounded-lg  bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
       >
-        {/* <div className="bg-white p-2 w-fit text-white flex rounded-full  items-center justify-center"> */}
-        {/* <ImMobile size={40} color="black" /> */}
-        <Image src={"/assets/stats.png"} width={60} alt="bill" height={60} />
+ 
+        <Image src={stats} width={60} alt="bill" height={60} />
 
-        {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
-        {/* </div> */}
+   
 
         <h3 className="  text-[22.5px] font-bold  text-center text-gray-900">
           تقارير ذكية
@@ -151,9 +149,8 @@ function Skils() {
         variants={variants}
         className="rounded-lg   bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
       >
-        {/* <div className="bg-white p-2 w-fit rounded-full  text-white flex items-center justify-center"> */}
-        {/* <FaDev size={40} color="black" /> */}
-        <Image src={"/assets/login.png"} width={60} alt="bill" height={60} />
+  
+        <Image src={login} width={60} alt="bill" height={60} />
 
         {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
         {/* </div> */}
@@ -176,7 +173,7 @@ function Skils() {
       >
         {/* <div className="bg-white p-2 w-fit text-white flex rounded-full items-center justify-center"> */}
         <Image
-          src={"/assets/support.png"}
+          src={support}
           width={60}
           alt="support"
           height={60}
@@ -202,7 +199,7 @@ function Skils() {
       >
         <div className="bg-white p-2 w-fit rounded-full text-white flex items-center justify-center">
           {/* <BsDatabaseCheck size={40} color="black" /> */}
-          <Image src={"/assets/bill.png"} width={40} alt="bill" height={40} />
+          <Image src={bill} width={40} alt="bill" height={40} />
 
           {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
         </div>

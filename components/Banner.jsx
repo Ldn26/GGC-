@@ -9,7 +9,9 @@ import { IoClose } from "react-icons/io5";
 // import { ModeToggle } from "./ui/ModeToggle";
 import Wave from "react-wavify";
 import BlurText from '../y/BlurText/BlurText'
+import mobile  from "../public/assets/mobile.svg";
 import { IoMdMenu } from "react-icons/io";
+import logo from "../public/assets/logo.svg";
 function Banner() {
   const [isOpen, setIsOpen] = useState(false);
   const text = '  خدام  تطبيق'
@@ -64,7 +66,7 @@ function Banner() {
               >
                 <Link
                   href={`#${menuItem.toLowerCase()}`}
-                  className="relative text-xl transition duration-300 w-fit block text-mainColor tracking-wide hover:text-orangeColor"
+                  className="relative text-xl transition  duration-300 w-fit block text-white tracking-wide hover:text-orangeColor"
                 >
                   {menuItem}
                 </Link>
@@ -79,7 +81,7 @@ function Banner() {
             height={20}
             className="  p-2 z-30 rounded-full"
             alt="logo"
-            src={"/assets/logo.svg"}
+            src={logo}
           />
 
           {/* Mobile Hamburger Icon */}
@@ -105,7 +107,7 @@ function Banner() {
           } w-3/5 flex justify-center flex-col   h-[400px] rounded-3xl   gap-1 items-center px-3 p-4`}
         >
           <Image
-            src={"/assets/logo.svg"}
+            src={logo}
             alt="me"
             className="rounded-full"
             width={80}
@@ -128,7 +130,7 @@ function Banner() {
               <Link
                 onClick={() => setIsOpen(!isOpen)}
                 href={`/#${menuItem}`}
-                className="transition  text-center text-xl   dark:text-white  font-medium tracking-wide duration-300 hover:text-primary "
+                className="transition  text-center text-xl   text-white  font-medium tracking-wide duration-300 hover:text-primary "
               >
                 {menuItem}
               </Link>
@@ -154,7 +156,7 @@ function Banner() {
 
                 direction="bottom"
                 // onAnimationComplete={handleAnimationComplete}
-                className="lg:text-[50px] text-[40px]   font-bold  text-right "
+                className="lg:text-[50px] text-[40px]  text-white  font-bold  text-right "
               />
 
               <p className="text-[28px] md:text-[40px]   ml-4 ltr text-right text-primary">
@@ -162,7 +164,7 @@ function Banner() {
               </p>
             </div>
 
-            <p className="mt-4 max-w-xl sm:text-2xl/relaxed text-center lg:text-right">
+            <p className="mt-4 max-w-xl sm:text-2xl/relaxed text-center   text-white  lg:text-right">
               مع تطبيقنا، يمكنك مسح المنتجات ضوئيًا، تحديث المخزون فورًا، وتنظيم
               عملياتك بكل كفاءة. واجهة بسيطة وأدوات قوية لتبسيط إدارة المخزون
               وتحقيق الإنتاجية المثلى.
@@ -192,9 +194,9 @@ function Banner() {
           <Image
             width={450}
             height={450}
-            className="   floating-flip-element    "
-            alt="me"
-            src={"/assets/mobile.svg"}
+            className="   !w-[450px] !h-[450px] floating-flip-element    "
+            alt="mewwfront"
+            src={mobile}
           />
         </div>
       </div>

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useEffect } from 'react'
 import {motion ,useAnimation} from "framer-motion"
 import {useInView} from 'react-intersection-observer'
-import CountUp from '../y/CountUp/CountUp'
+import logo from '../public/assets/logo.svg'
 function About() {
 
 
@@ -67,14 +67,12 @@ function About() {
               height={150}
               className=" z-30 rounded-full"
               alt="me"
-              src={"/assets/logo.svg"}
+              src={logo}
             />
           </div>
 
-          <p className="mt-4 max-w-lg text-2xl/relaxed text-center">
-            {/* نحن فريق متخصص في تقديم حلول تقنية متكاملة لإدارة الأعمال. نقدم
-            تطبيقًا مبتكرًا يساعدك في تحويل عمليات إدارة المخزون من مهمة معقدة
-            إلى عملية بسيطة وفعال */}
+          <p className="mt-4 max-w-lg  text-white text-2xl/relaxed text-center">
+
             نقدم تطبيقًا متكاملًا لإدارة الأعمال والمخزون، يتيح لك مسح الباركود
             بسهولة، متابعة المبيعات، وإدارة المخزون بشكل ذكي. مع واجهة بسيطة
             وتقارير فورية، يساعدك التطبيق على تحسين عملياتك وزيادة أرباحك

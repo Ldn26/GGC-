@@ -1,7 +1,8 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from "next/image";
+import React from "react";
 
-
+import insta from "../public/assets/in.png";
+import fb from "../public/assets/fb.png";
 function Footer() {
   return (
     <footer className=" mt-10 banner text-white py-8 md:py-12">
@@ -19,10 +20,10 @@ function Footer() {
             <div className="flex justify-center gap-4   items-center space-x-4 space-x-reverse">
               <a href="#" className="hover:text-primary transition">
                 {/* فيسبوك */}
-                <Image alt="fab" src="/assets/fb.png" width={40} height={40} />
+                <Image alt="fab" src={fb} width={40} height={40} />
               </a>
-              <a href="#"  className="hover:text-primary  transition">
-                <Image alt="in" src="/assets/in.png" width={40} height={40} />
+              <a href="#" className="hover:text-primary  transition">
+                <Image alt="in" src={insta} width={40} height={40} />
               </a>
               {/* <a href="#" className="hover:text-primary transition">
                 لينكدإن
@@ -124,5 +125,4 @@ function Footer() {
   );
 }
 
-export default Footer
-
+export default Footer;

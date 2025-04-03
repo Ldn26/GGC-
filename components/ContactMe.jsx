@@ -2,86 +2,11 @@
 import Image from 'next/image'
 import React from 'react'
 import 'react-toastify/dist/ReactToastify.css'
-
+import full from '../public/assets/full.svg'
+import phone from '../public/assets/phone.png'
+import mail from '../public/assets/gmail.png'
 function ContactMe() {
-  // const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  // const  [data, setData] = useState({
-  //   email : '' , 
-  //   fullname : '' , 
-  //   feedback : ''
-  //  })
 
-
-// const [loading, setLoading] = useState(false);
-
-  //  const handleChange = (e) => {
-    
-  //   setData({
-  //     ...data,  // Spread the existing state values
-  //     [e.target.name]: e.target.value,  // Dynamically update the field based on input name
-  //   });
-  // };
- 
-  //  const handelSubmit  = async (e)=>{
-  //   e.preventDefault(); 
-  //   console.log(data)
-
-  //   if (!emailPattern.test(data.email)) {
-  //     toast.error("Please enter a valid email address", {
-  //       position: "top-right",
-  //     });
-    
-  //     return;
-  //   }
-
-
-  //   if (!data.email || !data.fullname || !data.feedback) {
-  //     toast.error('You need to fill all the inputs', {
-  //       position: "top-right",
-  //     });
-  //     return;
-  //   }
-
-
-
-    
-  //   try {
-  //     setLoading(true);
-  //     const response = await fetch("/api/offert",{
-  //       method : 'POST' ,
-  //       headers: {
-  //         'Content-Type': 'application/json', 
-  //       },
-  //       body: JSON.stringify(data), 
-  //     })
-  //     if(response.ok){
-  //       const result = await response.json(); // Parse the response from the server
-  //       toast.success(result.message, {
-  //         position: "top-right",
-  //       })
-  //       setData({
-  //         email: '',
-  //         fullname: '',
-  //         feedback: ''
-  //       });
-  //       setLoading(false);
-  //     }
-  //     else{   
-  //       toast.error('Error Notification!', {
-  //         position: "top-right",
-  //       })
-  //       setLoading(false);
-  //       // throw  new Error('Form submisiopm faild ')
-  //     }
-  //   }catch(error){
-  //     toast.error('Error Form submission failed', {
-  //       position: "top-right",
-  //     });
-  //     setLoading(false);
-  //       console.log(error)
-  //   }
-    
-  //  }
 
 
 
@@ -99,7 +24,7 @@ function ContactMe() {
             height={650}
             className="z-99 rounded-3xl"
             alt="contactus"
-            src={"/assets/full.svg"}
+            src={full}
           />
         </div>
 
@@ -107,7 +32,7 @@ function ContactMe() {
         <div className="flex items-center   w-full  xlb:nw-1/2 flex-col justify-center  ">
           <h1
             dir="rtl"
-            className="font-bold   text-2xl  tracking-wide   leading-relaxed  text-center lg:text-4xl"
+            className="font-bold   text-2xl  tracking-wide   text-white  leading-relaxed  text-center lg:text-4xl"
           >
             تواصل معنا لإنشاء حسابك <br />
             وابدأ في استخدام التطبيق
@@ -120,9 +45,9 @@ function ContactMe() {
               {/* Phone */}
               <div className="flex flex-row  gap-5  items-center justify-end ">
                 <Image
-                  src={"/assets/phone.png"}
+                  src={phone}
                   width={60}
-                  alt="mail"
+                  alt="hhhhphone"
                   height={60}
                 />
                 <h1 className="text-white text-3xl  "> الهاتف </h1>
@@ -140,7 +65,7 @@ function ContactMe() {
             <div>
               <div className="flex flex-row gap-5 mt-6 items-center justify-end ">
                 <Image
-                  src={"/assets/gmail.png"}
+                  src={mail}
                   width={60}
                   alt="mail"
                   height={60}
