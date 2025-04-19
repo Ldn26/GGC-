@@ -7,6 +7,7 @@ import DashPage from "../../components/DashPage";
 import InvoiceList, { Invoice } from "../../components/InvoiceList";
 import { MdDelete } from "react-icons/md";
 import { motion } from "framer-motion";
+
 import {
   Chart as ChartJS,
   LineElement,
@@ -303,22 +304,78 @@ const damydata =[
 
 
 
-const OrdersPage = () => {
+const OrdersPage = () => {  
+ const [data, setdata] = useState([
+   {
+     status: "On delivery",
+     color: "3",
+     storage: "30",
+     model: "PET",
+     image: "./col.jpeg",
+     id: 1,
+     statusColor: "orange",
+   },
+   {
+     status: "On delivery",
+     color: "3",
+     id: 2,
+
+     storage: "30",
+     model: "PET",
+     image: "./col.jpeg",
+     statusColor: "orange",
+   },
+   {
+     status: "Retarded",
+     color: "3",
+     storage: "30",
+     id: 3,
+
+     model: "PET",
+     image: "./col.jpeg",
+     statusColor: "red",
+   },
+   {
+     status: "In magazin",
+     color: "3",
+     storage: "30",
+     id:4 ,
+     model: "PET",
+     image: "./col.jpeg",
+     statusColor: "green",
+   },
+ ]);
+
+
+ 
+  const handleDelete = (id) => {
+    setdata((prev) => prev.filter((item) => item.id !== id));
+  };
+
+
   return (
-    <div style={{ backgroundColor: 'white', padding: '0 120px', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+    <div
+      style={{
+        backgroundColor: "white",
+        padding: "0 120px",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
       <div style={{ marginBottom: 20 }}>
-        <h2 style={{ fontSize: 18, fontWeight: 'bold', color: 'black' }}>My orders</h2>
+        <h2 style={{ fontSize: 18, fontWeight: "bold", color: "black" }}>
+          My orders
+        </h2>
       </div>
 
-      <div style={{ flex: 1, overflowY: 'auto', paddingBottom: 17 }}>
-        {[
-          { status: 'On delivery', color: '3', storage: '30', model: 'PET', image: 'assets/images/PET.jpeg', statusColor: 'orange' },
-          { status: 'On delivery', color: '3', storage: '30', model: 'PET', image: 'assets/images/PET.jpeg', statusColor: 'orange' },
-          { status: 'Retarded', color: '3', storage: '30', model: 'PET', image: 'assets/images/PET.jpeg', statusColor: 'red' },
-          { status: 'In magazin', color: '3', storage: '30', model: 'PET', image: 'assets/images/PET.jpeg', statusColor: 'green' },
-        ].map((item, index) => (
+      <div style={{ flex: 1, overflowY: "auto", paddingBottom: 17 }}>
+        {
+data
+        .map((item, index) => (
           <div key={index} style={{ marginBottom: 20 }}>
-            <PhoneItem {...item} />
+            <PhoneItem {...item} index={index} />
           </div>
         ))}
       </div>
@@ -327,43 +384,68 @@ const OrdersPage = () => {
 };
 
 const PhoneItem = ({ model, storage, color, image, status, statusColor }) => {
+
+
+
   return (
     <div style={{ paddingLeft: 10 }}>
-      <div style={{
-        backgroundColor: 'white',
-        borderRadius: 14,
-        boxShadow: '2px 2px 5px rgba(158, 158, 158, 0.75)',
-        display: 'flex',
-        alignItems: 'center',
-        padding: 10,
-      }}>
-        <div style={{
-          width: 80,
-          height: 80,
-          backgroundColor: '#f0f0f0',
-          borderRadius: 20,
-          overflow: 'hidden',
-        }}>
-          <img src={image} alt="phone" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      <div
+        style={{
+          backgroundColor: "white",
+          borderRadius: 14,
+          boxShadow: "2px 2px 5px rgba(158, 158, 158, 0.75)",
+          display: "flex",
+          alignItems: "center",
+          padding: 10,
+        }}
+      >
+        <div
+          style={{
+            width: 80,
+            height: 80,
+            backgroundColor: "#f0f0f0",
+            borderRadius: 20,
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src={image}
+            alt="phone"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
         </div>
 
         <div style={{ marginLeft: 16, flex: 1 }}>
-          <div style={{ fontSize: 18, fontWeight: 'bold' }}>{model}</div>
-          <div style={{ marginTop: 4, fontSize: 14, color: '#888' }}>
+          <div style={{ fontSize: 18, fontWeight: "bold" }}>{model}</div>
+          <div style={{ marginTop: 4, fontSize: 14, color: "#888" }}>
             {color}, {storage} kg
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20, paddingRight: 20 }}>
-          <span style={{
-            fontSize: 14,
-            fontWeight: 'bold',
-            color: statusColor
-          }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 20,
+            paddingRight: 20,
+          }}
+        >
+          <span
+            style={{
+              fontSize: 14,
+              fontWeight: "bold",
+              color: statusColor,
+            }}
+          >
             {status}
           </span>
-          <button style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-            <i className="material-icons">delete_outline</i>
+          <button 
+          // onClick={handelDelete}
+            style={{ background: "none", border: "none", cursor: "pointer" }}
+          >
+            <i className="material-icons">
+              <MdDelete  color="red" size={30} />
+            </i>
           </button>
         </div>
       </div>
