@@ -14,8 +14,9 @@ function Footer() {
                خدام
             </h3> */}
             <p className="mb-8 text-center ">
-              نقدم حلولاً متكاملة لإدارة المخزون والمبيعات لتطوير أعمالك وتحقيق
-              النجاح المستدام.
+              Connect. Recycle. Profit. Empowering Algeria's Circular Economy by
+              tracing, transforming, and monetising inorganic waste with
+              precision.
             </p>
             <div className="flex justify-center gap-4   items-center space-x-4 space-x-reverse">
               <a href="#" className="hover:text-primary transition">
@@ -109,15 +110,11 @@ function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p>© 2025 خِدْامَ. جميع الحقوق محفوظة</p>
+          <p> © 2025 Your Verco Start up . All rights reserved.</p>
           <div className="mt-2 text-sm text-gray-400 flex justify-center space-x-2 space-x-reverse">
-            <a href="#" className="hover:text-white transition">
-              شروط الخدمة
-            </a>
+     
             <span>|</span>
-            <a href="#" className="hover:text-white transition">
-              سياسة الخصوصية
-            </a>
+        
           </div>
         </div>
       </div>

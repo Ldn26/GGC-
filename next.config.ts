@@ -18,19 +18,19 @@ import type { NextConfig } from "next";
 
 
   const nextConfig: NextConfig = {
-    output: "export",
+    // output: "export",
     // basePath: "",
     // webpack: (config) => {
     //   config.output.publicPath = "./";
     //   return config;
     // }    ,
-    assetPrefix: "./", // This is key for relative paths
-    images: {
-      unoptimized: true,
-      // path: "./", // This is the key change
-      loader: "custom",
-      loaderFile: "./image-loader.js",
-    },
+    // assetPrefix: "./", // This is key for relative paths
+    // images: {
+    //   unoptimized: true,
+    //   // path: "./", // This is the key change
+    //   loader: "custom",
+    //   loaderFile: "./image-loader.js",
+    // },
 
   };
   export default nextConfig;

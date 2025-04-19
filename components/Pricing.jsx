@@ -35,7 +35,7 @@ function Pricing() {
   return (
     <div
     id="التسعير"
-     className=" w-full   flex  flex-col   banner gap-12   text-white   lg:flex-row   justify-center  px-2   my-16">
+     className=" w-full  mt-40 flex  flex-col   banner gap-12   text-white   lg:flex-row   justify-center  px-2   my-16">
       {PricePlan.map((plan, index) => {
         return (
           <div

@@ -1,8 +1,8 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { useEffect } from 'react'
-import { motion ,useAnimation} from "framer-motion"
+import { AnimatePresence, motion ,useAnimation} from "framer-motion"
 import { useInView } from 'react-intersection-observer'
 
 import barcode from "../public/assets/barcode.png";
@@ -32,7 +32,30 @@ function Skils() {
     visible: { opacity: 1, x: 0, y:0, transition: { duration: 0.5 ,ease :'linear' } },
   }
 
-
+const [hoveredIndex, setHoveredIndex] = useState(null);
+const features = [
+  {
+    title: "Impact Tracking",
+    description:
+      "Real‑time CO₂ savings and tree‑equivalent preservation metrics.",
+  },
+  {
+    title: "Instant Scanning",
+    description: "Scan product barcodes quickly and accurately.",
+  },
+  {
+    title: "Live Updates",
+    description: "Track inventory across all branches in real-time.",
+  },
+  {
+    title: "Smart Reports",
+    description: "Detailed sales analytics to help you make decisions.",
+  },
+  {
+    title: "Smart ffReports",
+    description: "Detailed sales analytics to help you make decisions.",
+  },
+];
   // const controls2 = useAnimation()
   const controls = useAnimation()
   const [ref, inView] = useInView({
@@ -73,22 +96,46 @@ function Skils() {
 
   return (
     <div
-      id="الميزات"
-      className="grid px-16 grid-cols-1 mb-10   mt-4 gap-12 lg:grid-cols-3 lg:gap-16"
+      // id="الميزات"
+      className="grid px-16 grid-cols-1 mb-10   mt-14 gap-12 lg:grid-cols-5 lg:gap-16"
     >
-      <motion.article
+        {features.map((item, index) => (
+          <motion.article key={index} className="">
+            <div
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="rounded-full bg-primary hover:scale-125 transition-all hover:w-66 hover:h-66 w-44 h-44 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 hover:shadow-2xl"
+            >
+              <p className="mt-2 font-extrabold p-4 text-center text-[20px] text-[#1E3A8A]">
+                {item.title}
+              </p>
+
+              <AnimatePresence>
+                {hoveredIndex === index && (
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="absolute bottom-[-40px] text-center text-[15px] text-primary bg-[#191A19] rounded-md px-3 py-1 shadow-lg"
+                  >
+                    {item.description}
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.article>
+        ))}
+
+      {/* <motion.article
         ref={ref}
         initial="hidden"
         animate={controls}
         variants={variants}
         className="rounded-lg  bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transtion-all hover:shadow-2xl sm:p-6"
       >
-        {/* <div className="bg-white p-2 w-fit rounded-full text-white flex items-center justify-center"> */}
-        {/* <MdWeb size={40} color="black" /> */}
-        <Image src={barcode} width={60} alt="bill" height={60} />
 
-        {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
-        {/* </div> */}
+        <Image src={barcode} width={60} alt="bill" height={60} />
 
         <h3 className="  text-[22.5px] font-bold   text-center text-gray-900">
           مسح ضوئي فوري{" "}
@@ -97,20 +144,16 @@ function Skils() {
         <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
           مسح باركود المنتجات بسرعة ودقة{" "}
         </p>
-      </motion.article>
-
-      <motion.article
+      </motion.article> */}
+      {/* <motion.article
         ref={ref2}
         initial="hidden"
         animate={controls}
         variants={variants3}
         className="rounded-lg  bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transtion-all hover:shadow-2xl sm:p-6"
       >
-        {/* <div className="bg-white p-2 w-fit text-white rounded-full flex items-center justify-center"> */}
         <Image src={update} width={60} alt="bill" height={60} />
-        {/* <FaCode size={40} color="black" /> */}
-        {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
-        {/* </div> */}
+\
 
         <h3 className="  text-[22.5px] font-bold  text-center  text-gray-900">
           تحديث لحظي{" "}
@@ -119,8 +162,8 @@ function Skils() {
         <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
           متابعة المخزون بين جميع فروعك في الوقت الفعلي
         </p>
-      </motion.article>
-
+      </motion.article> */}
+      {/* 
       <motion.article
         ref={ref}
         initial="hidden"
@@ -128,10 +171,7 @@ function Skils() {
         variants={variants2}
         className="rounded-lg  bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
       >
- 
         <Image src={stats} width={60} alt="bill" height={60} />
-
-   
 
         <h3 className="  text-[22.5px] font-bold  text-center text-gray-900">
           تقارير ذكية
@@ -140,8 +180,8 @@ function Skils() {
         <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
           تحليلات مبيعات مفصلة تساعدك في اتخاذ القرارات
         </p>
-      </motion.article>
-
+      </motion.article> */}
+      {/* 
       <motion.article
         ref={ref}
         initial="hidden"
@@ -149,11 +189,9 @@ function Skils() {
         variants={variants}
         className="rounded-lg   bg-secendery p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
       >
-  
         <Image src={login} width={60} alt="bill" height={60} />
 
-        {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
-        {/* </div> */}
+
 
         <h3 className="  text-[22.5px] font-bold  text-center text-gray-900">
           واجهة بسيطة
@@ -162,8 +200,8 @@ function Skils() {
         <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
           تصميم بديهي لا يحتاج إلى تدريب مسبق
         </p>
-      </motion.article>
-
+      </motion.article> */}
+      {/* 
       <motion.article
         ref={ref}
         initial="hidden"
@@ -171,15 +209,8 @@ function Skils() {
         variants={variants4}
         className="rounded-lg    bg-secendery  p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
       >
-        {/* <div className="bg-white p-2 w-fit text-white flex rounded-full items-center justify-center"> */}
-        <Image
-          src={support}
-          width={60}
-          alt="support"
-          height={60}
-        />
+        <Image src={support} width={60} alt="support" height={60} />
 
-        {/* </div> */}
 
         <h3 className="  text-[22.5px] font-bold   text-center  text-gray-900">
           دعم متكامل
@@ -188,9 +219,9 @@ function Skils() {
         <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
           فريق دعم فني متاح على مدار الساعة
         </p>
-      </motion.article>
+      </motion.article> */}
 
-      <motion.article
+      {/* <motion.article
         ref={ref}
         initial="hidden"
         animate={controls}
@@ -198,10 +229,8 @@ function Skils() {
         className="rounded-lg bg-secendery   p-4 shadow-sm hover:shadow-primary flex flex-col items-center justify-center gap-4 transition-all hover:shadow-2xl sm:p-6"
       >
         <div className="bg-white p-2 w-fit rounded-full text-white flex items-center justify-center">
-          {/* <BsDatabaseCheck size={40} color="black" /> */}
           <Image src={bill} width={40} alt="bill" height={40} />
 
-          {/* <Image alt='expert' width={40} height={40} className='text-white ' src={"./check.svg"} /> */}
         </div>
 
         <h3 className="  text-[22.5px] font-bold  text-center text-gray-900">
@@ -211,7 +240,7 @@ function Skils() {
         <p className="mt-2 font-normal text-center text-[15px] text-gray-500">
           حساب تلقائي لتكلفة المنتج وسعر البيع مع هامش الربح
         </p>
-      </motion.article>
+      </motion.article> */}
     </div>
   );
 }

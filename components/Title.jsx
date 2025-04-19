@@ -23,24 +23,26 @@ function Title({
   }, [controls, inView])
 
   return (
-
-
     <motion.div
-
-   ref={ref}
+      ref={ref}
       initial="hidden"
       animate={controls}
       variants={variants}
-    className={`bg-primary w-full h-36 mb-24 lg:mb-0  items-center flex justify-center `}>
-    <motion.div className={`flex flex-row relative hover:translate-x-14 hover:translate transition-all
+      className={`bg- w-full h-36 mb-24 lg:mb-0  items-center flex justify-center `}
+    >
+      <motion.div
+        className={`flex flex-row relative  hover:translate transition-all
     
-       items-start my-4 justify-center`}>
-        <div className='absolute w-full h-2 bg-white top-14 hidden xl:block '></div>
-        <h1 className={`text-5xl text-white  font-bold text-center mr-4 `}>{titel}</h1>
-       {/* <Image  src={icon} alt='icon'  width={40} height={40}/> */}
+       items-start my-4 justify-center`}
+      >
+        {/* <div className="absolute w-full h-2 bg-[#] top-14 hidden xl:block "></div> */}
+        <h1 className={`text-5xl text-[#1E5128] font-bold text-center mr-4 `}>
+          {titel}
+        </h1>
+        {/* <Image  src={icon} alt='icon'  width={40} height={40}/> */}
+      </motion.div>
     </motion.div>
-    </motion.div>
-  )
+  );
 }
 
 export default Title

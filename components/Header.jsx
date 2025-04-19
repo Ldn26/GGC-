@@ -2,96 +2,102 @@
 import { useState } from "react";
 import Link from "next/link";
 import { IoClose } from "react-icons/io5";
-import { ModeToggle } from "./ui/ModeToggle";
 import Image from "next/image";
 import { IoMdMenu } from "react-icons/io";
+import logo from "../public/trace.svg";
 
 const  Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="h-[88px]  z-50   sticky top-0   dark:bg-black   ">
-      <div className="container mx-auto py-5 flex items-center justify-between px-9 md:py-5">
-        {/* Desktop Navigation */}
-        <ul className="md:items-center lg:flex hidden">
-          {[
-            "الرئيسية",
-            "من نحن",
-            "الميزات",
-            "الفريق",
-            "التسعير",
-            "اتصل بنا",
-          ].map((menuItem, index) => (
-            <li
-              key={index}
-              className="mx-4 whitespace-nowrap font-medium hover:border-b-2 border-primary flex-none"
-            >
-              <Link
-                href={`#${menuItem.toLowerCase()}`}
-                className="relative text-xl transition duration-300 w-fit block text-mainColor tracking-wide hover:text-orangeColor"
-              >
-                {menuItem}
-              </Link>
-            </li>
-          ))}
-        </ul>
-{/* Desktop Buttons  */}
-        <div className="hidden lg:flex lg:items-center">
-          <Link
-            href="#contact"
-            className="block w-full rounded bg-primary px-12 py-3 text-2xl font-medium text-white shadow hover:bg-white hover:border-primary border hover:scale-105 hover:text-primary transition-all focus:outline-none  sm:w-auto"
-          >
-            احصل على عرض
-          </Link>
-          <div className="ml-2">
-            <ModeToggle />
+  
+      <header className="z-50 border-b banner border-white w-full  top-0 ">
+        <div className="container mx-auto h-[88px] flex items-center justify-between px-4 sm:px-8">
+          {/* Logo */}
+          <div className="hidden lg:flex items-center">
+            <Image
+              width={200}
+              height={40}
+              className="p-2 z-30 rounded-full"
+              alt="logo"
+              src={logo}
+            />
           </div>
-        </div>
 
-        {/* Mobile Hamburger Icon */}
-        <div className="lg:hidden  top-6">
-          <div
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-3xl transition-all text-white"
-          >
-            {isOpen ? (
-              <IoMdMenu size={40} color="white" />
-            ) : (
-              <IoClose size={40} color="white" />
+          {/* Navigation (Desktop) */}
+          <ul className="hidden lg:flex items-center">
+            {["Home", "Contact", "Services", "About us"].map(
+              (menuItem, index) => (
+                <li
+                  key={index}
+                  className="mx-4 font-medium hover:border-b-2 border-primary"
+                >
+                  <Link
+                    href={`/#${menuItem}`}
+                    className="text-2xl text-white tracking-wide hover:text-orangeColor transition duration-300"
+                  >
+                    {menuItem}
+                  </Link>
+                </li>
+              )
             )}
-          </div>
-          <div></div>
-        </div>
-      </div>
+          </ul>
 
-      {/* Mobile Navigation Menu */}
-      <ul
-        className={`fixed dark:bg-primary bg-black top-[70px] z-50 gap-3 lg:hidden ${
-          isOpen ? "left-[35px] duration-500" : "-left-[1500px] duration-500"
-        } w-3/5 flex justify-center flex-col   h-[400px] rounded-2xl   gap-1 items-center px-3 p-4`}
-      >
-        <Image
-          src={"/Y.png"}
-          alt="me"
-          className="rounded-full"
-          width={80}
-          height={80}
-        />
-        {["Home", "About", "Project", "contact"].map((menuItem, index) => (
-          <li
-            key={index}
-            className="hover:border-l-4   border rounded-lg hover:scale-105 transition-all  border-white  hover:border-primary  mb-2 hover:border-r-primary hover:border-r-4 w-2/4 justify-center flex gap-2 items-center"
-          >
+          {/* Buttons */}
+          <div className="flex items-center gap-x-4">
             <Link
-              href={`/#${menuItem.toLowerCase().replace(" ", "")}`}
-              className="transition  text-center   dark:text-white  font-medium tracking-wide duration-300 hover:text-primary text-sm"
+              href="/signup"
+              className="rounded-lg px-6 py-2 text-2xl font-medium bg-[#1E5128] text-primary shadow hover:scale-105 hover:bg-primary hover:text-[#191A19] transition-all"
             >
-              {menuItem}
+              Sign up
             </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+            <Link
+              href="/login"
+              className="rounded-lg px-6 py-2 text-2xl font-medium bg-primary text-[#1E5128] shadow hover:scale-105 hover:bg-[#191A19] hover:text-primary transition-all"
+            >
+              Login
+            </Link>
+
+            {/* Mobile Menu Icon */}
+            <div className="lg:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-white text-3xl"
+              >
+                {isOpen ? <IoClose size={40} /> : <IoMdMenu size={40} />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <ul
+          className={`fixed bg-primary border border-primary z-40 top-[88px] transition-all duration-500 ${
+            isOpen ? "left-0" : "-left-full"
+          } w-3/5 h-[400px] rounded-3xl flex flex-col items-center justify-center gap-4 px-4`}
+        >
+          <Image
+            src={logo}
+            alt="logo"
+            className="rounded-full"
+            width={80}
+            height={80}
+          />
+          {["Home", "Contact", "Services", "About us"].map(
+            (menuItem, index) => (
+              <li key={index} className="w-3/4 text-center">
+                <Link
+                  href={`#${menuItem.toLowerCase()}`}
+                  onClick={() => setIsOpen(false)}
+                  className="text-xl font-medium text-white hover:text-primary transition"
+                >
+                  {menuItem}
+                </Link>
+              </li>
+            )
+          )}
+        </ul>
+      </header>
   );
 };
 
